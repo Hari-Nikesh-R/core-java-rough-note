@@ -1,13 +1,17 @@
 package org.example.exception;
 
+import org.example.Animal;
+
 import java.io.FileReader;
 import java.io.IOException;
 
 public class Main {
     public static void main(String[] args) {
        // Exception propagation
+        Animal animal = new Animal();
         try {
             level1();
+            System.gc();
         } catch (RuntimeException e) {
             throw new RuntimeException(e);
         }
@@ -22,6 +26,10 @@ public class Main {
     }
 
     static void level3() {
-        throw new RuntimeException("Error at level 3");
+        Animal animal = new Animal();
+
     }
+
+
+
 }
